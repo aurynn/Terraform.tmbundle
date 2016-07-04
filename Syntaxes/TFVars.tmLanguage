@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>tfvars</string>
+	</array>
+	<key>name</key>
+	<string>TFVars</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>#string</string>
+		</dict>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>string</key>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>comment</key>
+			<string>double quoted strings, allows for interpolation</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>string.quoted.double.terraform</string>
+		</dict>
+	</dict>
+	<key>scopeName</key>
+	<string>source.tfvars</string>
+	<key>uuid</key>
+	<string>E9476B9C-8FDC-4FCA-9155-CE344CBA00BB</string>
+</dict>
+</plist>

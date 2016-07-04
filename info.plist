@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>frys@nhelaa.pbz</string>
+	<key>contactName</key>
+	<string>Aurynn Shaw</string>
+	<key>description</key>
+	<string>Terraform syntax highlighting and snippets and such</string>
+	<key>name</key>
+	<string>Terraform</string>
+	<key>uuid</key>
+	<string>19FB3BCA-1F8A-432D-B201-DE249A121059</string>
+</dict>
+</plist>

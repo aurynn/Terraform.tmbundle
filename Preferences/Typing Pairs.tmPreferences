@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Typing Pairs</string>
+	<key>scope</key>
+	<string>source.terraform</string>
+	<key>settings</key>
+	<dict/>
+	<key>uuid</key>
+	<string>30C37859-5DCA-4C20-9ED2-30E7251D6198</string>
+</dict>
+</plist>

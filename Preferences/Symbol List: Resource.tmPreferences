@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Symbol List: Resource</string>
+	<key>scope</key>
+	<string>source.terraform meta.structure.terraform.identifier</string>
+	<key>settings</key>
+	<dict>
+		<key>showInSymbolList</key>
+		<true/>
+		<key>symbolTransformation</key>
+		<string>
+    s/^(\s*)[a-zA-Z0-9\_\-]+\s"([a-zA-Z0-9\_\-]+)"\s"([a-zA-Z0-9\_\-]+)"\s\{$/$1$2 -&gt; $3/g;
+    s/^(\s*)([a-zA-Z0-9\_\-]+)\s"([a-zA-Z0-9\_\-]+)"\s\{$/$1$2 -&gt; $3/g;
+    s/^(\s*)([a-zA-Z0-9\_\-]+)\s\{$/$1$2/g;</string>
+	</dict>
+	<key>uuid</key>
+	<string>FBF548A1-41BC-415B-8F21-B9779332575E</string>
+</dict>
+</plist>

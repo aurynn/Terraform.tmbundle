@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Symbol List: function name</string>
+	<key>scope</key>
+	<string>source.terraform entity.name.function</string>
+	<key>settings</key>
+	<dict>
+		<key>showInSymbolList</key>
+		<false/>
+	</dict>
+	<key>uuid</key>
+	<string>E3960385-E2D3-400A-99DE-E8737664A1ED</string>
+</dict>
+</plist>
