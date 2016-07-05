@@ -17,7 +17,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#empty_block</string>
+			<string>#other_block</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -86,6 +86,38 @@
 				</dict>
 			</array>
 		</dict>
+		<key>assign_block</key>
+		<dict>
+			<key>begin</key>
+			<string>\b[a-zA-Z0-9_\-]+\W\=\W(\{)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.terraform.begin.block</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\})</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.terraform.end.block</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.structure.terraform.resource.assign_block</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
+				</dict>
+			</array>
+		</dict>
 		<key>comment_block</key>
 		<dict>
 			<key>begin</key>
@@ -116,31 +148,6 @@
 			<string>\b(false|true)\b</string>
 			<key>name</key>
 			<string>meta.terraform.boolean</string>
-		</dict>
-		<key>empty_block</key>
-		<dict>
-			<key>begin</key>
-			<string>\{</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.terraform.begin.block</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\}</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.terraform.end.block</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.structure.terraform.resource.empty_block</string>
 		</dict>
 		<key>interpolated_terraform</key>
 		<dict>
@@ -408,6 +415,10 @@
 				<dict>
 					<key>include</key>
 					<string>#array</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#assign_block</string>
 				</dict>
 			</array>
 		</dict>
