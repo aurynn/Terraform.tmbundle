@@ -135,7 +135,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.terraform</string>
+					<string>punctuation.definition.comment.begin.terraform</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -145,7 +145,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.whitespace.comment.closing.terraform</string>
+					<string>punctuation.whitespace.comment.end.terraform</string>
 				</dict>
 			</dict>
 			<key>name</key>
