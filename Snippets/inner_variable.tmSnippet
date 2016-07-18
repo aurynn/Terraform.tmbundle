@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>"${var.${1}}"</string>
+	<string>\${var.${1}}</string>
 	<key>name</key>
 	<string>inner_variable</string>
 	<key>scope</key>
-	<string>terraform.main</string>
+	<string>string.quoted.double.terraform</string>
 	<key>tabTrigger</key>
 	<string>var</string>
 	<key>uuid</key>

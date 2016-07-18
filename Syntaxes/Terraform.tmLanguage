@@ -37,7 +37,15 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#hexadecimal</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#numeric</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#heredoc</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -95,7 +103,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.terraform.begin.block</string>
+					<string>punctuation.definition.block.begin.terraform</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -105,11 +113,11 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.terraform.end.block</string>
+					<string>punctuation.definition.block.end.terraform</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.structure.terraform.resource.assign_block</string>
+			<string>meta.block.terraform</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -121,33 +129,124 @@
 		<key>comment_block</key>
 		<dict>
 			<key>begin</key>
-			<string>\/\*</string>
+			<string>(?=^[ \t]+)?(\/\*)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.comment.leading.terraform</string>
+				</dict>
+			</dict>
 			<key>end</key>
-			<string>\*\/</string>
+			<string>(\*\/)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.comment.closing.terraform</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>comment.block.terraform</string>
 		</dict>
 		<key>comment_line</key>
 		<dict>
-			<key>match</key>
-			<string>#.*</string>
-			<key>name</key>
-			<string>comment.line.terraform</string>
-		</dict>
-		<key>const</key>
-		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>(^[ \t]+)?(?=#)</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant</string>
+					<string>punctuation.whitespace.comment.leading.terraform</string>
 				</dict>
 			</dict>
+			<key>end</key>
+			<string>(?!\G)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>#</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.terraform</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>comment.line.number-sign.terraform</string>
+				</dict>
+			</array>
+		</dict>
+		<key>const</key>
+		<dict>
 			<key>match</key>
 			<string>\b(false|true)\b</string>
 			<key>name</key>
-			<string>meta.terraform.boolean</string>
+			<string>constant.language.boolean.terraform</string>
+		</dict>
+		<key>heredoc</key>
+		<dict>
+			<key>begin</key>
+			<string>(&lt;&lt;)("|'|)\\?(\w+)\2</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.heredoc.terraform</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.heredoc-token.terraform</string>
+				</dict>
+			</dict>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.terraform</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>source.json.embedded.terraform</string>
+			<key>end</key>
+			<string>^(\3)(?=\s|;|&amp;|$)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.heredoc-token.terraform</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.json.embedded.terraform</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.json</string>
+				</dict>
+			</array>
+		</dict>
+		<key>hexadecimal</key>
+		<dict>
+			<key>comment</key>
+			<string>handles hexadecimal numbers</string>
+			<key>match</key>
+			<string>\b0[xX]\h(?&gt;_?\h)*r?i?\b</string>
+			<key>name</key>
+			<string>constant.numeric.terraform</string>
 		</dict>
 		<key>interpolated_terraform</key>
 		<dict>
@@ -155,7 +254,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(\$\{)</string>
+					<string>(\$(?&lt;!\$\$)\{)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
@@ -166,7 +265,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.block.terraform.begin</string>
+							<string>punctuation.definition.block.begin.terraform</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -181,11 +280,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.block.terraform.end</string>
+							<string>punctuation.definition.block.end.terraform</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>text.plain.terraform.inline</string>
+					<string>text.plain.inline.terraform</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -211,17 +310,17 @@
 										<key>0</key>
 										<dict>
 											<key>name</key>
-											<string>source.terraform.method_call</string>
+											<string>source.method.terraform</string>
 										</dict>
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>entity.name.function.terraform.method_call</string>
+											<string>entity.name.function.method.terraform</string>
 										</dict>
 										<key>2</key>
 										<dict>
 											<key>name</key>
-											<string>punctuation.section.terraform.bracket</string>
+											<string>punctuation.section.bracket.terraform</string>
 										</dict>
 									</dict>
 									<key>end</key>
@@ -236,11 +335,11 @@
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>punctuation.section.terraform.bracket</string>
+											<string>punctuation.section.bracket.terraform</string>
 										</dict>
 									</dict>
 									<key>name</key>
-									<string>source.terraform.method_call</string>
+									<string>source.method.terraform</string>
 									<key>patterns</key>
 									<array>
 										<dict>
@@ -270,7 +369,7 @@
 										</dict>
 										<dict>
 											<key>match</key>
-											<string>.</string>
+											<string>,</string>
 											<key>name</key>
 											<string>punctuation.separator.array.terraform</string>
 										</dict>
@@ -307,7 +406,7 @@
 										</dict>
 									</dict>
 									<key>match</key>
-									<string>([a-z_0-9]+)\.([a-zA-Z\-_0-9]+)(?:\.([a-zA-Z\-_0-9]*))?</string>
+									<string>([a-z_0-9]+)\.([a-zA-Z\-_0-9]*)(?:\.([a-zA-Z\-_0-9]*))?</string>
 									<key>name</key>
 									<string>text.plain.terraform.reference</string>
 								</dict>
@@ -337,6 +436,9 @@
 			                 \d+    # followed by one or more digits
 			               )?
 			             )?         # make decimal portion optional
+                   (
+                     [kKmMgG]b? # Do we have a trailing suffix?
+                   )?         # 
                    \b
 			           )</string>
 			<key>name</key>
@@ -345,33 +447,33 @@
 		<key>resource</key>
 		<dict>
 			<key>begin</key>
-			<string>^(?:\s*)([a-zA-Z0-9\_\-]+)(?:\s+("[a-zA-Z0-9\_\-]+"))?(?:\s+("[a-zA-Z0-9\_\-]+")?)?\s(\{)$</string>
+			<string>^(?:\s*)([a-zA-Z0-9\_\-]+)(?:\s+("[a-zA-Z0-9\_\-]*"))?(?:\s+("[a-zA-Z0-9\_\-]*")?)?\s(\{)($)?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>meta.structure.terraform.identifier</string>
+					<string>meta.structure.identifier.terraform</string>
 				</dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.terraform.keyword</string>
+					<string>keyword.control.keyword.terraform</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.type.terraform.resource_type</string>
+					<string>entity.name.type.resource.type.terraform</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>string.quoted.double.terraform.resource_name</string>
+					<string>string.quoted.double.resource.name.terraform</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.terraform.begin.block</string>
+					<string>punctuation.definition.block.begin.terraform</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -381,11 +483,11 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.block.terraform.end</string>
+					<string>punctuation.definition.block.end.terraform</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.structure.terraform.resource</string>
+			<string>meta.structure.resource.terraform</string>
 			<key>patterns</key>
 			<array>
 				<dict>

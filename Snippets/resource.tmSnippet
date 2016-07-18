@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>output "${1:name}" {
-	value = "\${${2}}"
+	<string>resource "${1}" "${2:name}" {
+	${3:key} = "${4:value}"
 }</string>
 	<key>name</key>
-	<string>output</string>
+	<string>resource</string>
 	<key>scope</key>
 	<string>source.terraform</string>
 	<key>tabTrigger</key>
-	<string>output</string>
+	<string>res</string>
 	<key>uuid</key>
-	<string>A842A40F-82A7-4C8C-B0B5-FBF3E39A2BDE</string>
+	<string>B82D43E1-8188-4A0D-B3DB-F82B90762D96</string>
 </dict>
 </plist>

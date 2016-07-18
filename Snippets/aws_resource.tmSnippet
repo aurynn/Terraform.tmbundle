@@ -4,7 +4,7 @@
 <dict>
 	<key>content</key>
 	<string>resource "aws_${1:resource}" "${2:name}" {
-  ${3:key} = "${4:value}"
+	${3:key} = "${4:value}"
 }</string>
 	<key>name</key>
 	<string>aws_resource</string>

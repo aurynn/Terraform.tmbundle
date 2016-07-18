@@ -4,10 +4,10 @@
 <dict>
 	<key>content</key>
 	<string>variable "${1}" {
-  description = "${2}"
-  default = {
-    ${3:key} = "${4:value}"
-  }
+	description = "${2}"
+	default = {
+		${3:key} = "${4:value}"
+	}
 }</string>
 	<key>name</key>
 	<string>variable_dictionary</string>
