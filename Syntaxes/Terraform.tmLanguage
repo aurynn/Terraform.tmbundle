@@ -312,11 +312,6 @@
 									<string>([a-z0-9]+)[\W]*(\()</string>
 									<key>beginCaptures</key>
 									<dict>
-										<key>0</key>
-										<dict>
-											<key>name</key>
-											<string>source.method.terraform</string>
-										</dict>
 										<key>1</key>
 										<dict>
 											<key>name</key>
@@ -325,26 +320,21 @@
 										<key>2</key>
 										<dict>
 											<key>name</key>
-											<string>punctuation.section.bracket.terraform</string>
+											<string>punctuation.definition.arguments.begin.terraform</string>
 										</dict>
 									</dict>
 									<key>end</key>
 									<string>(\))</string>
 									<key>endCaptures</key>
 									<dict>
-										<key>0</key>
-										<dict>
-											<key>name</key>
-											<string>source.terraform.method_call</string>
-										</dict>
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>punctuation.section.bracket.terraform</string>
+											<string>punctuation.definition.arguments.end.terraform</string>
 										</dict>
 									</dict>
 									<key>name</key>
-									<string>source.method.terraform</string>
+									<string>meta.method-call.terraform</string>
 									<key>patterns</key>
 									<array>
 										<dict>
@@ -358,10 +348,26 @@
 										<dict>
 											<key>begin</key>
 											<string>"</string>
+											<key>beginCaptures</key>
+											<dict>
+												<key>0</key>
+												<dict>
+													<key>name</key>
+													<string>punctuation.definition.string.begin.terraform</string>
+												</dict>
+											</dict>
 											<key>comment</key>
 											<string>double quoted strings, allows for interpolation</string>
 											<key>end</key>
 											<string>"</string>
+											<key>endCaptures</key>
+											<dict>
+												<key>0</key>
+												<dict>
+													<key>name</key>
+													<string>punctuation.definition.string.end.terraform</string>
+												</dict>
+											</dict>
 											<key>name</key>
 											<string>string.quoted.double.terraform</string>
 											<key>patterns</key>
@@ -389,31 +395,26 @@
 								<dict>
 									<key>captures</key>
 									<dict>
-										<key>0</key>
-										<dict>
-											<key>name</key>
-											<string>source</string>
-										</dict>
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>variable.language.terraform.reference</string>
+											<string>variable.language.reference.terraform</string>
 										</dict>
 										<key>2</key>
 										<dict>
 											<key>name</key>
-											<string>variable.parameter.terraform.name</string>
+											<string>variable.parameter.terraform</string>
 										</dict>
 										<key>3</key>
 										<dict>
 											<key>name</key>
-											<string>variable.parameter.terraform.name</string>
+											<string>variable.parameter.terraform</string>
 										</dict>
 									</dict>
 									<key>match</key>
 									<string>([a-z_0-9]+)\.([a-zA-Z\-_0-9]*)(?:\.([a-zA-Z\-_0-9]*))?</string>
 									<key>name</key>
-									<string>text.plain.terraform.reference</string>
+									<string>meta.reference.terraform</string>
 								</dict>
 							</array>
 						</dict>
