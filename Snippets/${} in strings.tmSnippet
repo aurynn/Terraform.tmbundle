@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>${} in strings</string>
 	<key>scope</key>
-	<string>source.terraform &amp; string.quoted.double.terraform</string>
+	<string>B:source.terraform string.quoted.double.terraform</string>
 	<key>uuid</key>
 	<string>FDE4F18B-4F28-43D1-9C22-40B6EB199699</string>
 </dict>
