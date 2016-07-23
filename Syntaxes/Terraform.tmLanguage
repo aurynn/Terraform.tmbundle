@@ -197,47 +197,53 @@
 		<key>heredoc</key>
 		<dict>
 			<key>begin</key>
-			<string>(&lt;&lt;)("|'|)\\?(\w+)\2</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.heredoc.terraform</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.control.heredoc-token.terraform</string>
-				</dict>
-			</dict>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.terraform</string>
-				</dict>
-			</dict>
+			<string>(?=(&lt;&lt;)("|'|)\\?(\w+)\2)</string>
 			<key>contentName</key>
-			<string>source.json.embedded.terraform</string>
+			<string>meta.embedded.block.json</string>
 			<key>end</key>
-			<string>^(\3)(?=\s|;|&amp;|$)</string>
+			<string>(?!\G)(\s*\n)?</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.heredoc-token.terraform</string>
+					<string>punctuation.whitespace.embedded.trailing.terraform</string>
 				</dict>
 			</dict>
-			<key>name</key>
-			<string>meta.json.embedded.terraform</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
+					<key>begin</key>
+					<string>(&lt;&lt;)("|'|)\\?(\w+)\2</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.terraform</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
 					<string>source.json</string>
+					<key>end</key>
+					<string>^(\3)(?=\s|;|&amp;|$)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.terraform</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.unquoted.heredoc.terraform</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.json</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -256,20 +262,17 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(\$(?&lt;!\$\$)\{)</string>
+					<string>\$(?&lt;!\$\$)\{</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>source.terraform.inline</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.block.begin.terraform</string>
+							<string>punctuation.section.embedded.begin.terraform</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>source.terraform.inline</string>
 					<key>end</key>
 					<string>(\})</string>
 					<key>endCaptures</key>
@@ -277,16 +280,16 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>source.terraform.inline</string>
+							<string>punctuation.section.embedded.end.terraform</string>
 						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.block.end.terraform</string>
+							<string>source.terraform.inline</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>text.plain.inline.terraform</string>
+					<string>meta.embedded.line.terraform</string>
 					<key>patterns</key>
 					<array>
 						<dict>
