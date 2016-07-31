@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>moveRight:</string>
+		</dict>
+	</array>
+	<key>hideFromUser</key>
+	<true/>
+	<key>keyEquivalent</key>
+	<string>}</string>
+	<key>name</key>
+	<string>Overwrite '}' in ${ .. }</string>
+	<key>scope</key>
+	<string>source.terraform string meta.embedded.line.terraform punctuation.section.embedded.end.terraform</string>
+	<key>uuid</key>
+	<string>21C85041-27F2-4DC4-BE26-D746A3F2EBE8</string>
+</dict>
+</plist>
