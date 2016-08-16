@@ -7,7 +7,27 @@
 	<key>scope</key>
 	<string>source.terraform</string>
 	<key>settings</key>
-	<dict/>
+	<dict>
+		<key>smartTypingPairs</key>
+		<array>
+			<array>
+				<string>"</string>
+				<string>"</string>
+			</array>
+			<array>
+				<string>(</string>
+				<string>)</string>
+			</array>
+			<array>
+				<string>{</string>
+				<string>}</string>
+			</array>
+			<array>
+				<string>[</string>
+				<string>]</string>
+			</array>
+		</array>
+	</dict>
 	<key>uuid</key>
 	<string>30C37859-5DCA-4C20-9ED2-30E7251D6198</string>
 </dict>
