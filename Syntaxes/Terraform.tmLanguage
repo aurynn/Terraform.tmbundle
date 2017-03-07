@@ -448,7 +448,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\$(?&lt;!\$\$)\{</string>
+					<string>\$[\$]{0,1}\{</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
@@ -468,11 +468,6 @@
 							<key>name</key>
 							<string>punctuation.section.embedded.end.terraform</string>
 						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>source.terraform.inline</string>
-						</dict>
 					</dict>
 					<key>name</key>
 					<string>meta.embedded.line.terraform</string>
@@ -489,6 +484,10 @@
 						<dict>
 							<key>include</key>
 							<string>#terraform_lookup</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#string</string>
 						</dict>
 					</array>
 					<key>repository</key>
@@ -541,6 +540,10 @@
 											<string>#terraform_reference</string>
 										</dict>
 										<dict>
+											<key>include</key>
+											<string>#numeric</string>
+										</dict>
+										<dict>
 											<key>begin</key>
 											<string>"</string>
 											<key>beginCaptures</key>
@@ -589,7 +592,7 @@
 							<array>
 								<dict>
 									<key>begin</key>
-									<string>\[</string>
+									<string>(\[)</string>
 									<key>beginCaptures</key>
 									<dict>
 										<key>0</key>
@@ -604,7 +607,7 @@
 										</dict>
 									</dict>
 									<key>end</key>
-									<string>\]</string>
+									<string>(\])</string>
 									<key>endCaptures</key>
 									<dict>
 										<key>0</key>
