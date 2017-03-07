@@ -272,7 +272,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;&lt;)("|'|)(YAML)\2</string>
+					<string>(&lt;&lt;)("|'|)(YAML)\2\n</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
@@ -328,7 +328,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;&lt;)("|'|)(SHELL|BASH|SH)\2</string>
+					<string>(&lt;&lt;)("|'|)(SHELL|BASH|SH)\2\n</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
@@ -384,7 +384,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;&lt;)("|'|)(\w+)\2</string>
+					<string>(&lt;&lt;)("|'|)(\w+)\2\n</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
