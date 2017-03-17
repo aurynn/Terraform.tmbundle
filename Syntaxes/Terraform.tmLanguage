@@ -658,9 +658,14 @@
 											<key>name</key>
 											<string>variable.parameter.terraform.name</string>
 										</dict>
+										<key>5</key>
+										<dict>
+											<key>name</key>
+											<string>variable.parameter.terraform.name</string>
+										</dict>
 									</dict>
 									<key>match</key>
-									<string>([a-z_0-9]+)\.([a-zA-Z\-_0-9]+)?(?:\.([a-zA-Z\-_0-9]+|\*))?(?:\.([a-zA-Z\-_0-9]+))?</string>
+									<string>([a-z_0-9]+)\.([a-zA-Z\-_0-9]+)?(?:\.([a-zA-Z\-_0-9]+|\*))?(?:\.([a-zA-Z\-_0-9\*]+))?(?:\.([a-zA-Z\-_0-9]+))?</string>
 									<key>name</key>
 									<string>text.plain.terraform.reference</string>
 								</dict>
