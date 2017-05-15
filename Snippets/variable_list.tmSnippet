@@ -7,8 +7,7 @@
 	type = "list"
 	description = "${2}"
 	default = ["$3",]
-}
-$4</string>
+}</string>
 	<key>name</key>
 	<string>variable list</string>
 	<key>scope</key>
