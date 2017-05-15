@@ -216,169 +216,178 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;&lt;)("|'|)(JSON)\2\n</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.terraform</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.heredoc.terraform</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.heredoc-token.terraform</string>
-						</dict>
-					</dict>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.terraform</string>
-						</dict>
-					</dict>
-					<key>contentName</key>
-					<string>source.json</string>
+					<string>(?=(?&gt;&lt;&lt;("|'|)JSON\1$\n?))</string>
 					<key>end</key>
-					<string>^(\3)(?=\s|;|&amp;|$)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.terraform</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.heredoc-token.terraform</string>
-						</dict>
-					</dict>
+					<string>(?!\G)</string>
 					<key>name</key>
 					<string>meta.embedded.block.json</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>include</key>
+							<key>begin</key>
+							<string>(&lt;&lt;)("|'|)(JSON)\2$\n?</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.begin.terraform</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.heredoc.terraform</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.control.heredoc-token.terraform</string>
+								</dict>
+							</dict>
+							<key>contentName</key>
 							<string>source.json</string>
+							<key>end</key>
+							<string>^(\3)(?=\s|;|&amp;|$)</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.end.terraform</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.control.heredoc-token.terraform</string>
+								</dict>
+							</dict>
+							<key>name</key>
+							<string>string.unquoted.heredoc.terraform</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>source.json</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;&lt;)("|'|)(YAML)\2\n</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.terraform</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.heredoc.terraform</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.heredoc-token.terraform</string>
-						</dict>
-					</dict>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.terraform</string>
-						</dict>
-					</dict>
-					<key>contentName</key>
-					<string>source.yaml</string>
+					<string>(?=(?&gt;&lt;&lt;("|'|)YAML\1$\n?))</string>
 					<key>end</key>
-					<string>^(\3)(?=\s|;|&amp;|$)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.terraform</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.heredoc-token.terraform</string>
-						</dict>
-					</dict>
+					<string>(?!\G)</string>
 					<key>name</key>
 					<string>meta.embedded.block.yaml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>include</key>
+							<key>begin</key>
+							<string>(&lt;&lt;)("|'|)(YAML)\2$\n?</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.begin.terraform</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.heredoc.terraform</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.control.heredoc-token.terraform</string>
+								</dict>
+							</dict>
+							<key>contentName</key>
 							<string>source.yaml</string>
+							<key>end</key>
+							<string>^(\3)(?=\s|;|&amp;|$)</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.end.terraform</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.control.heredoc-token.terraform</string>
+								</dict>
+							</dict>
+							<key>name</key>
+							<string>string.unquoted.heredoc.terraform</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>source.yaml</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;&lt;)("|'|)(SHELL|BASH|SH)\2\n</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.terraform</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.heredoc.terraform</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.heredoc-token.terraform</string>
-						</dict>
-					</dict>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.terraform</string>
-						</dict>
-					</dict>
-					<key>contentName</key>
-					<string>source.shell</string>
+					<string>(?=(?&gt;&lt;&lt;("|'|)(SHELL|BASH|SH)\1$\n?))</string>
 					<key>end</key>
-					<string>^(\3)(?=\s|;|&amp;|$)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.terraform</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.heredoc-token.terraform</string>
-						</dict>
-					</dict>
+					<string>(?!\G)</string>
 					<key>name</key>
 					<string>meta.embedded.block.shell</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>include</key>
+							<key>begin</key>
+							<string>(&lt;&lt;)("|'|)(SHELL|BASH|SH)\2$\n?</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.begin.terraform</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.heredoc.terraform</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.control.heredoc-token.terraform</string>
+								</dict>
+							</dict>
+							<key>contentName</key>
 							<string>source.shell</string>
+							<key>end</key>
+							<string>^(\3)(?=\s|;|&amp;|$)</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.end.terraform</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.control.heredoc-token.terraform</string>
+								</dict>
+							</dict>
+							<key>name</key>
+							<string>string.unquoted.heredoc.terraform</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>source.shell</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
@@ -403,16 +412,6 @@
 							<string>keyword.control.heredoc-token.terraform</string>
 						</dict>
 					</dict>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.terraform</string>
-						</dict>
-					</dict>
-					<key>contentName</key>
-					<string>string.quoted</string>
 					<key>end</key>
 					<string>^(\3)(?=\s|;|&amp;|$)</string>
 					<key>endCaptures</key>
@@ -429,7 +428,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.embedded.block.generic</string>
+					<string>string.unquoted.heredoc.terraform</string>
 				</dict>
 			</array>
 		</dict>
