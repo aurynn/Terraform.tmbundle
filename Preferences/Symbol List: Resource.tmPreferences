@@ -5,14 +5,14 @@
 	<key>name</key>
 	<string>Symbol List: Resource</string>
 	<key>scope</key>
-	<string>source.terraform meta.structure.terraform.identifier</string>
+	<string>source.terraform meta.structure.identifier.terraform</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
 		<true/>
 		<key>symbolTransformation</key>
 		<string>
-    s/^(\s*)[a-zA-Z0-9\_\-]+\s"([a-zA-Z0-9\_\-]+)"\s"([a-zA-Z0-9\_\-]+)"\s\{$/$1$2 -&gt; $3/g;
+    s/^(\s*)[a-zA-Z0-9\_\-]+\s"([a-zA-Z0-9\_\-]+)"\s"([a-zA-Z0-9\_\-]+)"\s\{$/$2 -&gt; "$3"/g;
     s/^(\s*)([a-zA-Z0-9\_\-]+)\s"([a-zA-Z0-9\_\-]+)"\s\{$/$1$2 -&gt; $3/g;
     s/^(\s*)([a-zA-Z0-9\_\-]+)\s\{$/$1$2/g;</string>
 	</dict>
