@@ -8,7 +8,6 @@
 	vars {
 		${3:key} = "${4:value}"
 	}
-	
 }</string>
 	<key>name</key>
 	<string>data</string>
