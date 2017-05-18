@@ -245,7 +245,7 @@
 								</dict>
 							</dict>
 							<key>contentName</key>
-							<string>source.terraform</string>
+							<string>source.json</string>
 							<key>end</key>
 							<string>^(\3)(?=\s|;|&amp;|$)</string>
 							<key>endCaptures</key>
