@@ -245,7 +245,7 @@
 								</dict>
 							</dict>
 							<key>contentName</key>
-							<string>source.json</string>
+							<string>source.terraform</string>
 							<key>end</key>
 							<string>^(\3)(?=\s|;|&amp;|$)</string>
 							<key>endCaptures</key>
@@ -265,6 +265,10 @@
 							<string>string.unquoted.heredoc.terraform</string>
 							<key>patterns</key>
 							<array>
+								<dict>
+									<key>include</key>
+									<string>#interpolated_terraform</string>
+								</dict>
 								<dict>
 									<key>include</key>
 									<string>source.json</string>
@@ -328,6 +332,10 @@
 									<key>include</key>
 									<string>source.yaml</string>
 								</dict>
+								<dict>
+									<key>include</key>
+									<string>#interpolated_terraform</string>
+								</dict>
 							</array>
 						</dict>
 					</array>
@@ -387,6 +395,10 @@
 									<key>include</key>
 									<string>source.shell</string>
 								</dict>
+								<dict>
+									<key>include</key>
+									<string>#interpolated_terraform</string>
+								</dict>
 							</array>
 						</dict>
 					</array>
@@ -429,6 +441,13 @@
 					</dict>
 					<key>name</key>
 					<string>string.unquoted.heredoc.terraform</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#interpolated_terraform</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
