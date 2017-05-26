@@ -7,6 +7,19 @@
 		<string>tf</string>
 		<string>tfvars</string>
 	</array>
+	<key>injections</key>
+	<dict>
+		<key>R:string.unquoted.heredoc.terraform - meta.embedded.line.terraform</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#interpolated_terraform</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>keyEquivalent</key>
 	<string>^~T</string>
 	<key>name</key>
@@ -267,10 +280,6 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#interpolated_terraform</string>
-								</dict>
-								<dict>
-									<key>include</key>
 									<string>source.json</string>
 								</dict>
 							</array>
@@ -332,10 +341,6 @@
 									<key>include</key>
 									<string>source.yaml</string>
 								</dict>
-								<dict>
-									<key>include</key>
-									<string>#interpolated_terraform</string>
-								</dict>
 							</array>
 						</dict>
 					</array>
@@ -395,10 +400,6 @@
 									<key>include</key>
 									<string>source.shell</string>
 								</dict>
-								<dict>
-									<key>include</key>
-									<string>#interpolated_terraform</string>
-								</dict>
 							</array>
 						</dict>
 					</array>
@@ -441,13 +442,6 @@
 					</dict>
 					<key>name</key>
 					<string>string.unquoted.heredoc.terraform</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#interpolated_terraform</string>
-						</dict>
-					</array>
 				</dict>
 			</array>
 		</dict>
