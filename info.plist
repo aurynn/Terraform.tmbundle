@@ -7,23 +7,86 @@
 	<key>contactName</key>
 	<string>Aurynn Shaw</string>
 	<key>description</key>
-	<string>Terraform syntax highlighting and snippets and such</string>
+	<string>Terraform syntax highlighting, snippets, and other helpers</string>
 	<key>mainMenu</key>
 	<dict>
 		<key>items</key>
 		<array>
-			<string>FDE4F18B-4F28-43D1-9C22-40B6EB199699</string>
-			<string>08E09A67-9AB5-4238-8A17-EB8018913B77</string>
-			<string>C6782691-FD04-4B84-A475-50B1413C8A19</string>
-			<string>3900C7BE-A1BA-4DDB-B724-E0F13497A38D</string>
-			<string>14985944-DBB1-48B8-BBC7-62A30AB45C95</string>
-			<string>F00AB1DC-486B-4D26-BBCE-702E98E20DA1</string>
-			<string>A842A40F-82A7-4C8C-B0B5-FBF3E39A2BDE</string>
-			<string>B82D43E1-8188-4A0D-B3DB-F82B90762D96</string>
-			<string>19D2E662-9E7F-4803-A999-4A41B3BD8B36</string>
-			<string>B2256EB1-F8FF-4419-94A0-8813CFB3ADCE</string>
-			<string>F3E9CAB4-55F5-4E4E-B60E-4BCFBF8F2084</string>
+      <string>fc573933-98fa-482d-869c-7b665b991424</string>
+      <string>8573772f-0ddc-4a8c-a381-a7388c3943bf</string>
+      <string>979fa1f7-a241-42a6-bdd0-7cf278c8967b</string>
+      <string>a0b0460e-103f-4605-9b1e-51b005b6e56e</string>
 		</array>
+    <key>submenus</key>
+    <dict>
+      <key>fc573933-98fa-482d-869c-7b665b991424</key>
+      <dict>
+        <key>items</key>
+        <array>
+    			<string>19D2E662-9E7F-4803-A999-4A41B3BD8B36</string>
+    			<string>FDE4F18B-4F28-43D1-9C22-40B6EB199699</string>
+    			<string>C6782691-FD04-4B84-A475-50B1413C8A19</string>
+    			<string>3900C7BE-A1BA-4DDB-B724-E0F13497A38D</string>
+    			<string>14985944-DBB1-48B8-BBC7-62A30AB45C95</string>
+    			<string>F00AB1DC-486B-4D26-BBCE-702E98E20DA1</string>
+    			<string>A842A40F-82A7-4C8C-B0B5-FBF3E39A2BDE</string>
+    			<string>B82D43E1-8188-4A0D-B3DB-F82B90762D96</string>
+    			<string>B2256EB1-F8FF-4419-94A0-8813CFB3ADCE</string>
+    			<string>F3E9CAB4-55F5-4E4E-B60E-4BCFBF8F2084</string>
+          <string>B30A9C93-E244-4CBE-8A59-01555B76792A</string>
+          <string>CCBFC643-90B5-4A56-8354-89427F224337</string>
+          <string>D5C70D09-0AAE-4EE9-B897-138B7EBDF7B5</string>
+        </array>
+        <key>name</key>
+        <string>General</string>
+      </dict>
+      <key>8573772f-0ddc-4a8c-a381-a7388c3943bf</key>
+      <dict>
+        <key>items</key>
+        <array>
+          <string>bf38e5f2-ca66-4a01-8de5-51f2d2bd845c</string>
+          <string>08E09A67-9AB5-4238-8A17-EB8018913B77</string>
+          <string>21D2B57B-53C7-4865-9A04-A8A29847BF3D</string>
+          <string>566490FC-D8D0-49E2-8581-32CDC1622B42</string>
+        </array>
+        <key>name</key>
+        <string>AWS</string>
+      </dict>
+      <key>979fa1f7-a241-42a6-bdd0-7cf278c8967b</key>
+      <dict>
+        <key>items</key>
+        <array>
+          <string>F0C62891-A4DA-42D5-AA52-D9AC60766D43</string>
+          <string>75D728FC-76F6-4AC0-AF14-7C94115ECB0D</string>
+          <string>FDC2DB75-0A24-4630-9862-4EE47E6AF1E6</string>
+          <string>54E5E11B-9816-4B91-ACAD-B4CA7AA71D93</string>
+          <string>A3BC0837-C6CB-4777-B00C-4782BD320D3B</string>
+        </array>
+        <key>name</key>
+        <string>Openstack</string>
+      </dict>
+      <key>a0b0460e-103f-4605-9b1e-51b005b6e56e</key>
+      <dict>
+        <key>items</key>
+        <array>
+          <string>42E71587-F55A-403D-913E-25284B8DD247</string>
+          <string>E889A29C-BEC9-46EF-AA0A-02E69217D3FE</string>
+        </array>
+        <key>name</key>
+        <string>Kubernetes</string>
+      </dict>
+      
+      <key>bf38e5f2-ca66-4a01-8de5-51f2d2bd845c</key>
+      <dict>
+        <key>items</key>
+        <array>
+          <string>443EBD46-3B95-47F6-8926-11623BC0D32E</string>
+        </array>
+        <key>name</key>
+        <string>Policy Documents</string>
+      </dict>
+      
+    </dict>
 	</dict>
 	<key>name</key>
 	<string>Terraform</string>

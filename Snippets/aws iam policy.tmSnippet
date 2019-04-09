@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>variable "${1}" {
-	type = "map"
-	description = "${2}"
-	default = {
-		${3:key} = "${4:value}"
+	<string>data "aws_iam_policy_document" "${1:name}" {
+  statement {
+		actions = [
+			"${2:actions}"
+		]
 	}
 }</string>
 	<key>name</key>
-	<string>variable.map</string>
+	<string>aws.iam_policy_document</string>
 	<key>scope</key>
 	<string>source.terraform</string>
 	<key>tabTrigger</key>
-	<string>map</string>
+	<string>aws.iam_policy_document</string>
 	<key>uuid</key>
-	<string>B2256EB1-F8FF-4419-94A0-8813CFB3ADCE</string>
+	<string>21D2B57B-53C7-4865-9A04-A8A29847BF3D</string>
 </dict>
 </plist>

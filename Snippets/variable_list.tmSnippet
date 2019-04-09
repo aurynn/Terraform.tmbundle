@@ -6,12 +6,16 @@
 	<string>variable "${1}" {
 	type = "list"
 	description = "${2}"
-	default = ["$3",]
+	default = [
+		"$3",
+	]
 }</string>
 	<key>name</key>
-	<string>variable list</string>
+	<string>variable.list</string>
 	<key>scope</key>
 	<string>source.terraform</string>
+	<key>tabTrigger</key>
+	<string>list</string>
 	<key>uuid</key>
 	<string>F3E9CAB4-55F5-4E4E-B60E-4BCFBF8F2084</string>
 </dict>

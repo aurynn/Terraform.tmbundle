@@ -10,7 +10,7 @@
 	}
 }</string>
 	<key>name</key>
-	<string>data</string>
+	<string>data.template_file</string>
 	<key>scope</key>
 	<string>source.terraform</string>
 	<key>tabTrigger</key>

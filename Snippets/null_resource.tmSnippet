@@ -7,11 +7,11 @@
 	${3}
 }</string>
 	<key>name</key>
-	<string>null_resource</string>
+	<string>null.resource</string>
 	<key>scope</key>
 	<string>source.terraform</string>
 	<key>tabTrigger</key>
-	<string>null</string>
+	<string>null.resource</string>
 	<key>uuid</key>
 	<string>F00AB1DC-486B-4D26-BBCE-702E98E20DA1</string>
 </dict>

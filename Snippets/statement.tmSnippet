@@ -3,20 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>variable "${1}" {
-	type = "map"
-	description = "${2}"
-	default = {
-		${3:key} = "${4:value}"
-	}
-}</string>
+	<string>	statement {
+		sid = "$1"
+		actions = [
+			"$2",
+		]
+		resources = [
+			"$3"
+		]
+	}</string>
 	<key>name</key>
-	<string>variable.map</string>
+	<string>statement</string>
 	<key>scope</key>
-	<string>source.terraform</string>
+	<string>source.terraform meta.structure.resource.terraform</string>
 	<key>tabTrigger</key>
-	<string>map</string>
+	<string>statement</string>
 	<key>uuid</key>
-	<string>B2256EB1-F8FF-4419-94A0-8813CFB3ADCE</string>
+	<string>443EBD46-3B95-47F6-8926-11623BC0D32E</string>
 </dict>
 </plist>

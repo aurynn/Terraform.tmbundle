@@ -3,20 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>variable "${1}" {
-	type = "map"
-	description = "${2}"
-	default = {
-		${3:key} = "${4:value}"
-	}
-}</string>
+	<string>resource "openstack_compute_volume_attach_v2" "${1:title}" {
+  instance_id = "${2:instance_id}"
+  volume_id   = "${3:volume_id}"
+}${4}</string>
 	<key>name</key>
-	<string>variable.map</string>
+	<string>openstack.volume_attach</string>
 	<key>scope</key>
 	<string>source.terraform</string>
 	<key>tabTrigger</key>
-	<string>map</string>
+	<string>openstack.volume_attach</string>
 	<key>uuid</key>
-	<string>B2256EB1-F8FF-4419-94A0-8813CFB3ADCE</string>
+	<string>A3BC0837-C6CB-4777-B00C-4782BD320D3B</string>
 </dict>
 </plist>

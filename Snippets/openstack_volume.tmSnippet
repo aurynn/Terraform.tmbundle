@@ -3,20 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>variable "${1}" {
-	type = "map"
-	description = "${2}"
-	default = {
-		${3:key} = "${4:value}"
-	}
+	<string>resource "openstack_blockstorage_volume_v3" "${1:resource}" {
+  name        = "${2:name}"
+  description = "${3:description}"
+  size        = "${4:10}"
+	volume_type = "${5:b1.standard}"
 }</string>
 	<key>name</key>
-	<string>variable.map</string>
+	<string>openstack.volume</string>
 	<key>scope</key>
 	<string>source.terraform</string>
 	<key>tabTrigger</key>
-	<string>map</string>
+	<string>openstack.volume</string>
 	<key>uuid</key>
-	<string>B2256EB1-F8FF-4419-94A0-8813CFB3ADCE</string>
+	<string>54E5E11B-9816-4B91-ACAD-B4CA7AA71D93</string>
 </dict>
 </plist>
