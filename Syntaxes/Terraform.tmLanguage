@@ -112,6 +112,10 @@
 					<string>#heredoc</string>
 				</dict>
 				<dict>
+					<key>include</key>
+					<string>#dict</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>,</string>
 					<key>name</key>
@@ -185,7 +189,7 @@
 		<key>comment_line</key>
 		<dict>
 			<key>begin</key>
-			<string>(^[ \t]+)?(?=#)</string>
+			<string>(^[ \t]+)?(?=(#|\/\/))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -214,6 +218,22 @@
 					<key>name</key>
 					<string>comment.line.number-sign.terraform</string>
 				</dict>
+				<dict>
+					<key>begin</key>
+					<string>//</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.terraform</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>comment.line.doubleslash.terraform</string>
+				</dict>
 			</array>
 		</dict>
 		<key>const</key>
@@ -222,6 +242,62 @@
 			<string>\b(false|true)\b</string>
 			<key>name</key>
 			<string>constant.language.boolean.terraform</string>
+		</dict>
+		<key>dict</key>
+		<dict>
+			<key>begin</key>
+			<string>\{</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.dict.begin.terraform</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\}</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.dict.end.terraform</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.structure.dict.terraform</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#assign_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#numeric</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment_line</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#heredoc</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#dict</string>
+				</dict>
+			</array>
 		</dict>
 		<key>heredoc</key>
 		<dict>
