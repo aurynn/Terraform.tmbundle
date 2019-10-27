@@ -9,7 +9,7 @@
 	</array>
 	<key>injections</key>
 	<dict>
-		<key>R:string.unquoted.heredoc.terraform - meta.embedded.line.terraform</key>
+		<key>L:string.unquoted.heredoc.terraform - meta.embedded.line.terraform</key>
 		<dict>
 			<key>patterns</key>
 			<array>

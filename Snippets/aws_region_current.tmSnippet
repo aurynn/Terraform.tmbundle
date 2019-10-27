@@ -3,24 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>data "aws_iam_policy_document" "${1:name}" {
-  statement {
-		sid = "${2}"
-		actions = [
-			"${3:actions}"
-		]
-		resources = [
-			"${4:resources}"
-		]
-	}
-}</string>
+	<string>data "aws_region" "current" {}</string>
 	<key>name</key>
-	<string>aws.iam_policy_document</string>
+	<string>data.aws.region.current</string>
 	<key>scope</key>
 	<string>source.terraform</string>
 	<key>tabTrigger</key>
-	<string>aws.iam_policy_document</string>
+	<string>data.aws.region.current</string>
 	<key>uuid</key>
-	<string>21D2B57B-53C7-4865-9A04-A8A29847BF3D</string>
+	<string>2950FE62-8EC5-42A3-AF06-F34AE1A3ACFD</string>
 </dict>
 </plist>
