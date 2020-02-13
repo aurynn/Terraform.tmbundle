@@ -192,6 +192,14 @@
 					<key>include</key>
 					<string>#assign_block</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment_line</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment_block</string>
+				</dict>
 			</array>
 		</dict>
 		<key>assignment</key>
