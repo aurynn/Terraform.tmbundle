@@ -52,6 +52,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#primitives</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#array</string>
 		</dict>
 		<dict>
@@ -178,6 +182,22 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#const</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#types</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#primitives</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#numeric</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#reference</string>
 				</dict>
 				<dict>
@@ -295,7 +315,7 @@
 		<key>const</key>
 		<dict>
 			<key>match</key>
-			<string>\b(false|true)\b</string>
+			<string>\b(false|true|any)\b</string>
 			<key>name</key>
 			<string>constant.language.boolean.terraform</string>
 		</dict>
@@ -364,6 +384,10 @@
 				<dict>
 					<key>include</key>
 					<string>#types</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#primitives</string>
 				</dict>
 			</array>
 		</dict>
@@ -829,6 +853,13 @@
 			<key>name</key>
 			<string>constant.numeric.terraform</string>
 		</dict>
+		<key>primitives</key>
+		<dict>
+			<key>match</key>
+			<string>\b(string|number|bool)\b</string>
+			<key>name</key>
+			<string>constant.language.primitives.terraform</string>
+		</dict>
 		<key>reference</key>
 		<dict>
 			<key>patterns</key>
@@ -1029,7 +1060,7 @@
 		<key>types</key>
 		<dict>
 			<key>match</key>
-			<string>\b(string|map|object|list)\b</string>
+			<string>\b(map|object|list|set|tuple)\b</string>
 			<key>name</key>
 			<string>constant.language.types.terraform</string>
 		</dict>
