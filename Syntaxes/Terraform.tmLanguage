@@ -48,6 +48,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#types</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#array</string>
 		</dict>
 		<dict>
@@ -117,11 +121,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#terraform_reference</string>
+					<string>#reference</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#terraform_function_call</string>
+					<string>#function_call</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -134,6 +138,59 @@
 					<string>[^\s\]]</string>
 					<key>name</key>
 					<string>invalid.illegal.expected-array-separator.terraform</string>
+				</dict>
+			</array>
+		</dict>
+		<key>assign_block</key>
+		<dict>
+			<key>begin</key>
+			<string>^(?:\s*)([a-zA-Z0-9\_\-]+)\s*\=\s*(\{|\[)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>meta.structure.identifier.terraform</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.keyword.terraform</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\}|\])</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.block.end.terraform</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.structure.block.terraform</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#reference</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function_call</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#assignment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#assign_block</string>
 				</dict>
 			</array>
 		</dict>
@@ -150,7 +207,7 @@
 			<key>match</key>
 			<string>^(?:\s*)([a-zA-Z0-9\_\-]+)\s*\=\s*</string>
 			<key>name</key>
-			<string>meta.assignment.terraform</string>
+			<string>meta.structure.assignment.terraform</string>
 		</dict>
 		<key>comment_block</key>
 		<dict>
@@ -274,11 +331,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#terraform_reference</string>
+					<string>#reference</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#terraform_function_call</string>
+					<string>#function_call</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -295,6 +352,112 @@
 				<dict>
 					<key>include</key>
 					<string>#dict</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#types</string>
+				</dict>
+			</array>
+		</dict>
+		<key>function_call</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>([a-z0-9]+)[\W]*(\()</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>source.method.terraform</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.method.terraform</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.begin.terraform</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\))</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.end.terraform</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.method-call.terraform</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function_call</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#reference</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#numeric</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#dict</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#array</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>"</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.begin.terraform</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>double quoted strings, allows for interpolation</string>
+							<key>end</key>
+							<string>"</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.end.terraform</string>
+								</dict>
+							</dict>
+							<key>name</key>
+							<string>string.quoted.double.terraform</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#interpolated_terraform</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>,</string>
+							<key>name</key>
+							<string>punctuation.separator.array.terraform</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -562,21 +725,71 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#terraform_reference</string>
+							<string>#reference</string>
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#terraform_function_call</string>
+							<string>#function_call</string>
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#terraform_lookup</string>
+							<string>#lookup</string>
 						</dict>
 						<dict>
 							<key>include</key>
 							<string>#string</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>lookup</key>
+		<dict>
+			<key>begin</key>
+			<string>\[</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.array.begin.terraform</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\]</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.array.end.terraform</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.structure.lookup.terraform</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#numeric</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#reference</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function_call</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[^\s\]]</string>
+					<key>name</key>
+					<string>invalid.illegal.expected-array-separator.terraform</string>
 				</dict>
 			</array>
 		</dict>
@@ -607,6 +820,55 @@
 			           )</string>
 			<key>name</key>
 			<string>constant.numeric.terraform</string>
+		</dict>
+		<key>reference</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>source.terraform.reference</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.language.terraform.reference</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.terraform.name</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.terraform.name</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.terraform.name</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.terraform.name</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>([a-z_0-9]+)\.([a-zA-Z\-_0-9]+)?(?:\.([a-zA-Z\-_0-9]+|\*))?(?:\.([a-zA-Z\-_0-9\*]+))?(?:\.([a-zA-Z\-_0-9]+))?</string>
+					<key>name</key>
+					<string>text.plain.terraform.reference</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#lookup</string>
+				</dict>
+			</array>
 		</dict>
 		<key>resource</key>
 		<dict>
@@ -684,6 +946,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#assign_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#assignment</string>
 				</dict>
 				<dict>
@@ -692,11 +958,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#terraform_reference</string>
+					<string>#reference</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#terraform_function_call</string>
+					<string>#function_call</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -752,188 +1018,12 @@
 				</dict>
 			</array>
 		</dict>
-		<key>terraform_function_call</key>
+		<key>types</key>
 		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>([a-z0-9]+)[\W]*(\()</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>source.method.terraform</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.method.terraform</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.arguments.begin.terraform</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(\))</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.arguments.end.terraform</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.method-call.terraform</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#terraform_function_call</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#terraform_reference</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#numeric</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>"</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.string.begin.terraform</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>double quoted strings, allows for interpolation</string>
-							<key>end</key>
-							<string>"</string>
-							<key>endCaptures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.string.end.terraform</string>
-								</dict>
-							</dict>
-							<key>name</key>
-							<string>string.quoted.double.terraform</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#interpolated_terraform</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>,</string>
-							<key>name</key>
-							<string>punctuation.separator.array.terraform</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>terraform_lookup</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>(\[)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>source.terraform.inline</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.lookup.begin.terraform</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(\])</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>source.terraform.inline</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.lookup.end.terraform</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.structure.lookup.terraform</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#terraform_reference</string>
-				</dict>
-			</array>
-		</dict>
-		<key>terraform_reference</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>source</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.language.terraform.reference</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.parameter.terraform.name</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>variable.parameter.terraform.name</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>variable.parameter.terraform.name</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>variable.parameter.terraform.name</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>([a-z_0-9]+)\.([a-zA-Z\-_0-9]+)?(?:\.([a-zA-Z\-_0-9]+|\*))?(?:\.([a-zA-Z\-_0-9\*]+))?(?:\.([a-zA-Z\-_0-9]+))?</string>
-					<key>name</key>
-					<string>text.plain.terraform.reference</string>
-				</dict>
-			</array>
+			<key>match</key>
+			<string>\b(string|map|object|list)\b</string>
+			<key>name</key>
+			<string>constant.language.types.terraform</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
