@@ -4,10 +4,10 @@
 <dict>
 	<key>content</key>
 	<string>variable "${1}" {
-	type = "list"
-	description = "${2}"
+	type = list(${2:string})
+	description = "${3}"
 	default = [
-		"$3",
+		"$4",
 	]
 }</string>
 	<key>name</key>

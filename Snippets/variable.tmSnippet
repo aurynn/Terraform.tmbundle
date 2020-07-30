@@ -4,8 +4,9 @@
 <dict>
 	<key>content</key>
 	<string>variable "${1}" {
-	default = "${2}"
-	description = "${3}"
+	type = ${2:string}
+	default = "${3}"
+	description = "${4}"
 }</string>
 	<key>name</key>
 	<string>variable</string>

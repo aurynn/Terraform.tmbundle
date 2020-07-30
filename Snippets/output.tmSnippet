@@ -4,7 +4,7 @@
 <dict>
 	<key>content</key>
 	<string>output "${1:name}" {
-	value = "\${${2}}"
+	value = ${2}
 }</string>
 	<key>name</key>
 	<string>output</string>

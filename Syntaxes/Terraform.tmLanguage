@@ -389,6 +389,10 @@
 					<key>include</key>
 					<string>#primitives</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#const</string>
+				</dict>
 			</array>
 		</dict>
 		<key>function_call</key>
@@ -432,7 +436,19 @@
 					<array>
 						<dict>
 							<key>include</key>
+							<string>#array</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#function_call</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#comment_line</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#const</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -445,10 +461,6 @@
 						<dict>
 							<key>include</key>
 							<string>#dict</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#array</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -762,10 +774,6 @@
 						<dict>
 							<key>include</key>
 							<string>#function_call</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#lookup</string>
 						</dict>
 						<dict>
 							<key>include</key>

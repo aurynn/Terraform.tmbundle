@@ -4,8 +4,8 @@
 <dict>
 	<key>content</key>
 	<string>variable "${1}" {
-	type = "map"
-	description = "${2}"
+	type = map(${2:string})
+	description = "${3}"
 	default = {
 		${3:key} = "${4:value}"
 	}

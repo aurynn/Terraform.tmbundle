@@ -14,9 +14,92 @@
 			<key>include</key>
 			<string>#string</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#comment_block</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#comment_line</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>comment_block</key>
+		<dict>
+			<key>begin</key>
+			<string>(?=^[ \t]+)?(\/\*)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.begin.terraform</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\*\/)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.end.terraform</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>comment.block.terraform</string>
+		</dict>
+		<key>comment_line</key>
+		<dict>
+			<key>begin</key>
+			<string>(^[ \t]+)?(?=(#|\/\/))</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.comment.leading.terraform</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?!\G)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>#</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.terraform</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>comment.line.number-sign.terraform</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>//</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.terraform</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>comment.line.doubleslash.terraform</string>
+				</dict>
+			</array>
+		</dict>
 		<key>string</key>
 		<dict>
 			<key>begin</key>
