@@ -105,6 +105,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#array</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#numeric</string>
 				</dict>
 				<dict>
@@ -206,11 +210,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#assignment</string>
+					<string>#assign_block</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#assign_block</string>
+					<string>#assignment</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -219,6 +223,14 @@
 				<dict>
 					<key>include</key>
 					<string>#comment_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#heredoc</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#array</string>
 				</dict>
 			</array>
 		</dict>
