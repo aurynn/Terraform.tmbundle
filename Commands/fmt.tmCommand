@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/sh
+
+cd "${TM_DIRECTORY:-${TM_PROJECT_DIRECTORY:-$HOME}}"
+
+terraform fmt -</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^V</string>
+	<key>name</key>
+	<string>fmt</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
+	<key>scope</key>
+	<string>source.terraform</string>
+	<key>semanticClass</key>
+	<string></string>
+	<key>uuid</key>
+	<string>8DE68EBD-5A91-450B-B763-9767885F0D6D</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
